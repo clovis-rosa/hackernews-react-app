@@ -1,3 +1,11 @@
+/* eslint-disable import/prefer-default-export */
 import React from 'react';
+import { StoriesContainer } from './containers/StoriesContainer';
+// import { GlobalStyles } from './styles/GlobalStyles';
 
-export const App = () => <h1>Hello from React</h1>;
+export const App = () => (
+  <>
+    {/* <GlobalStyles /> */}
+    <StoriesContainer />
+  </>
+);
