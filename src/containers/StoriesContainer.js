@@ -6,22 +6,25 @@ import {
 } from '../styles/StoriesContainerStyles';
 import { Story } from '../components/Story';
 import { getStoryIds } from '../services/hnApi';
+import { useInfiniteScroll } from '../hooks/useInfiniteScroll';
 
 export const StoriesContainer = () => {
+  const { count } = useInfiniteScroll();
   const [storyIds, setstoryIds] = useState([]);
 
   useEffect(() => {
+    // console.log('count', count);
     getStoryIds().then((data) => setstoryIds(data));
     // getStoryIds().then((data) => data && setstoryIds(data));
-  }, []);
+  }, [count]);
   // [] = when the component mounts, do this...
 
   return (
     <>
       <GlobalStyle />
-      <StoriesContainerWrapper className="container">
-        <h1>Hacker News Stories</h1>
-        {storyIds.map((storyId) => (
+      <StoriesContainerWrapper>
+        <h1>⚡ Hacker News Stories</h1>
+        {storyIds.slice(0, count).map((storyId) => (
           <Story key={storyId} storyId={storyId} />
         ))}
       </StoriesContainerWrapper>

@@ -18,39 +18,27 @@ export const StoryWrapper = styled.section`
 
 export const StoryTitle = styled.h2`
   margin-bottom: 5px;
-  font-size: 15px; /* 18px */
-  line-height: 1.8;
   margin: 0;
 
   a {
-    color: #2e2e2c;
+    color: #0a0a23;
     background-color: #f8dc3d;
     text-decoration: none;
   }
 `;
 
 export const StoryMeta = styled.div`
-  font-style: italic;
-
-  span {
-    font-size: 14px;
-  }
-
   > span:first-child {
-    margin-right: 10px;
+    margin-right: 4px;
   }
 
   > span:not(:first-child):before {
     content: '|';
-    margin: 0 7px;
-  }
-
-  .story__meta-bold {
-    font-weight: bold;
+    margin: 0 8px;
   }
 `;
 
 export const StoryMetaElement = styled.span`
-  font-weight: bold;
+  font-weight: 700;
   color: ${(props) => props.color || 'red'};
 `;

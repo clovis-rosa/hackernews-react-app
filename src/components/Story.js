@@ -1,15 +1,15 @@
 /* eslint-disable import/prefer-default-export */
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, memo } from 'react';
 import { getStory } from '../services/hnApi';
-import { mapTime } from '../mappers/mapTime';
 import {
   StoryWrapper,
   StoryTitle,
   StoryMeta,
   StoryMetaElement,
 } from '../styles/StoryStyles';
+import { mapTime } from '../mappers/mapTime';
 
-export const Story = ({ storyId }) => {
+export const Story = memo(function Story({ storyId }) {
   const [story, setStory] = useState({});
 
   useEffect(() => {
@@ -19,22 +19,19 @@ export const Story = ({ storyId }) => {
   return story && story.url ? (
     <StoryWrapper data-testid="story">
       <StoryTitle>
-        <a href={story.url} alt={story.title}>
-          {story.title}
-        </a>
+        <a href={story.url}>{story.title}</a>
       </StoryTitle>
 
       <StoryMeta>
         <span data-testid="story-by">
-          <StoryMetaElement color="#000">By: </StoryMetaElement>
-          {story.by}
+          <StoryMetaElement color="#000">By:</StoryMetaElement> {story.by}
         </span>
 
         <span data-testid="story-time">
-          <StoryMetaElement color="#000">Posted: </StoryMetaElement>
+          <StoryMetaElement color="#000">Posted:</StoryMetaElement> {` `}
           {mapTime(story.time)}
         </span>
       </StoryMeta>
     </StoryWrapper>
   ) : null;
-};
+});
