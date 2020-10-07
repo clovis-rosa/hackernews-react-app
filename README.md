@@ -45,7 +45,7 @@ A quick look at the dependencies amd resources:
 ---
 
 Screenshots:
-![example image](hackernews-react-app.png 'Hacker News API Clone')
+![example image](hackernews-react.webp 'Hacker News API Clone')
 
 ---
 
