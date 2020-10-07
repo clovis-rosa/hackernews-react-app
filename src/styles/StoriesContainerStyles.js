@@ -38,9 +38,12 @@ h2 {
 
 p, span {
   font-family: 'Roboto', var(--font-family-secondary);
-  font-size: 14px;
   font-weight: 400;
   line-height: 27px;
+}
+
+p {
+  font-size: 14px;
 }
 
 ul {

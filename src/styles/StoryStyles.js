@@ -28,6 +28,10 @@ export const StoryTitle = styled.h2`
 `;
 
 export const StoryMeta = styled.div`
+  > span {
+    font-size: 14px;
+  }
+
   > span:first-child {
     margin-right: 4px;
   }
