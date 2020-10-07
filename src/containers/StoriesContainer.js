@@ -23,7 +23,12 @@ export const StoriesContainer = () => {
     <>
       <GlobalStyle />
       <StoriesContainerWrapper>
-        <h1>⚡ Hacker News Stories</h1>
+        <h1>
+          <span role="img" aria-label="emoji">
+            ⚡
+          </span>{' '}
+          Hacker News Stories
+        </h1>
         {storyIds.slice(0, count).map((storyId) => (
           <Story key={storyId} storyId={storyId} />
         ))}
