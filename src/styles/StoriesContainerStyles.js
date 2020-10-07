@@ -17,7 +17,6 @@ html {
 }
 
 body { 
-  font-family: 'Roboto', var(--font-family-secondary);
   font-size: 16px;
   font-weight: 700;
   line-height: 1.5;
